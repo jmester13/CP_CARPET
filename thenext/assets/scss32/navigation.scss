@@ -1,0 +1,203 @@
+#zo-header-navigation {
+    @include transition(all 200ms ease 0ms);
+    .main-navigation {
+        float: right;
+        .zo-menu-toggle { display: none;}
+        ul {             
+            padding: 0;
+			margin: 0;
+            li {
+                display: inline-block;
+                margin: 0 8px;
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+                > a {
+                    text-transform: uppercase;
+                }
+            }
+        }
+        ul.menu-main-menu {
+            font-size: 14px;
+            margin: 0;
+            > li  {
+                background-color: transparent;
+                position: relative;
+                @include transition(all 200ms ease 0ms);
+                > a {
+                    display: block;
+                    padding: 0 11px;
+                    border-bottom: 2px solid;
+                    border-bottom-color: transparent;
+                }
+                &:hover, &.current-menu-item, &.current-menu-parent, &.current-menu-ancestor, &.current-page-ancestor, &.current-page-parent,  &.current_page_item {
+                    a { 
+                        border-bottom-color: $primary_color;
+                        color: $primary_color;
+                    }
+                }
+                &:hover {
+                    > .sub-menu {
+                        top: 100%;
+                        margin-top: 0;
+                        border-top: 1px solid $primary_color;
+                        background-color: #fff;
+                        opacity: 1;   height: auto; overflow: visible;
+                        li:hover {
+                            background-color: $primary_color;
+                        }
+                    }
+                }
+                .menu-item-has-children {
+                    width: 100%;
+                    &:hover {
+                        > .sub-menu {
+                            border-top: 1px solid $primary_color;
+                            left: 100%; top: -1px;
+                            margin-top: 0; opacity: 1; height: auto; overflow: visible;
+                            &:hover {
+                                background-color: #e0bd07;
+                                a { color: #fff !important; }
+                            }
+                        }
+                    }
+                }
+                ul li {
+                    width: 100%;
+                    margin: 0;
+                    a { display: block;}
+                }
+                ul.sub-menu {
+                    opacity: 0;
+                    letter-spacing: 1px;
+                    width: 100%;
+                    margin: 24px 0 0 0;
+                    border-top: 0;
+                    background-color: #fff;
+                    position: absolute;
+                    z-index: 99;
+                    height: 0;
+                    overflow: hidden;
+                    line-height: normal;
+					min-width: 200px;
+                    @include transition(all 0.5s ease 0s);
+                    li {
+                        padding: 12px 0 12px 15px;
+						a{
+							text-align: left;
+						}
+                    }
+                }
+            }
+        }
+        .sub-menu li {
+            &.current-menu-item, &.current-menu-parent, &.current-menu-ancestor, &.current-page-ancestor, &.current-page-parent,  &.current_page_item {
+                background-color: $primary_color;
+                a { color: #fff !important;}
+            }
+        }
+    }
+}
+#zo-header.zo-header-2 {
+    width: 100%;
+    .zo-header-row-below {
+        background-color: #000;
+        height: 60px;
+        width: 100%;
+        #zo-header-logo {}
+        #zo-header-navigation {
+            padding: 0;
+            .main-navigation {
+                float: left;
+                ul.menu-main-menu {
+                    font-size: 14px;
+                    margin-top: 0;
+                    > li {
+                        background-color: transparent;
+                        position: relative;
+                        margin-right: 3px;
+                        &:last-child { margin-right: 0;}
+                        > a {
+                            border-bottom: none;
+                            line-height: 60px; 
+                            display: block;
+                            color: #FFF;
+                        }
+                        &:hover, &.current-menu-item, &.current-menu-parent, &.current-menu-ancestor, &.current_page_item {
+                            background-color: $primary_color ;
+                        }
+                        &:hover {
+                            > .sub-menu {
+                                top: 100%;
+                                margin-top: 0;
+                                border-top: 1px solid $primary_color;
+                                background-color: #fff;
+                                opacity: 1;   height: auto; overflow: visible;
+                                li:hover {
+                                    background-color: $primary_color;
+                                    a {
+                                        color: #FFF;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .sub-menu > li {
+                    + .current-menu-item, + .current-menu-parent, + .current-menu-ancestor, + .current_page_item {
+                        background-color: $primary_color;
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.widget_nav_menu{
+	.menu-left-menu-page-service-container{
+		ul{
+			margin: 0;
+			padding: 0;
+			li{
+				list-style: none;
+				a{
+					padding: 15px 25px;
+					background: #f7f7f7;
+					color: #222;
+					font-size: 13px;
+					position: relative;
+					display: inline-block;
+					width: 100%;
+					@include transition(all 200ms ease 0s);
+					&:hover{
+						color: #222;
+						background: $primary_color;
+					}
+					&:after{
+						content : "\f105";
+						font-family: FontAwesome; 
+						position: absolute;
+						right: 15px;
+						top: 50%;
+						@include transform( translateY(-50%) );
+					}
+				}
+				+ li{
+					a{
+						margin-top: 2px;
+					}
+				}
+			}
+			li.current-menu-item, li.current_page_item {
+				a{
+					color: #222;
+					background: $primary_color;
+				}
+			}
+		}
+	}
+}

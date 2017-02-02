@@ -1,0 +1,672 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+1. Reset HTML/CSS, Unitest, Body
+2. Page Title
+3. Primary
+4. Widget 
+
+
+-------------------------------------------------------------------*/
+.wpb_row {
+    margin-bottom: 0 !important;
+}
+/* ==========================================================================
+   [Start] 1. Reset HTML/CSS, Unitest, Body, @Extend
+========================================================================== */
+body {
+    overflow-x: hidden;
+    @include transition(all 420ms linear 0ms);
+    &.remove-margin-top {
+        margin-top: 0;
+    }
+}
+
+@include breakpoint-max(1200px){
+	body.boxed{
+		background: #fff !important;
+	}
+}
+
+/* Padding equal container */
+.padding-equal-container{
+	padding-right: calc( (100% - 1170px) / 2 ) !important;
+}
+.padding-left-equal-container{
+	padding-left: calc( (100% - 1170px) / 2 ) !important;
+}
+
+/* Page Boxed */
+.zo-page-boxed{
+
+	@include breakpoint-min(1200px){
+		margin-left: auto;
+		margin-right: auto;
+		width: 1200px;
+		background: #fff;
+		#zo-header.header-fixed{
+			width: 1200px;
+		}
+		#page-default.container{
+			padding-left: 0;
+			padding-right: 0;
+			width: 100%;
+		}
+		#primary.row{
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+    .blog-update-header-wrap{
+        h2 { color: #fff;}
+        .zo-grid-item{
+            h2.zo-grid-title.entry-title{
+                color: #fff; 
+            }
+            .zo-grid-image-wrap{
+                .zo-grid-date-detail-wrap{
+                    border: 5px solid #3a3c31;
+                }
+            }
+        }
+        .zo-grid-detail{
+            .post-by{
+                color: #c2c3c5;
+            }
+        }
+        .btn-readmore{
+            color: #c2c3c5;
+        }
+    }
+}
+/* Page Boxed */
+
+/* Row fullwidth */
+.no-container > .row { margin: 0; }
+@include breakpoint-max(1024px){
+	.zo-row-full-width > .no-container {
+        margin-left: 0;
+        margin-right: 0;
+        > .row {
+            margin-left: 0;
+            margin-right: 0;
+            > .wpb_column {
+                padding: 0;
+            }
+        }
+    }
+}
+
+.align-center {
+    text-align: center;
+}
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.entry-page-image {
+    margin-bottom: 14px;
+}
+#main #page-default {
+    position: relative;
+}
+a, a:hover, a:focus {
+    outline: none;
+    text-decoration: none;
+    @include transition(all 300ms linear 0ms);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 15px;
+    letter-spacing: 0;
+    a {
+        color: $primary_color;
+    }
+}
+
+canvas{
+	z-index: -1;
+}
+
+p {
+    margin: 0 0 15px;
+	letter-spacing: 1px;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+.w50 {
+    float: left;
+    width: 50%;
+}
+body .wpb_content_element,
+body .wpb_button {
+    margin: 0 auto;
+}
+.bg-effect-lg,
+.bg-effect-sm {
+    background-position: center center;
+    background-repeat: repeat-y;
+    background-size: 100%;
+}
+.bg-position-center {
+    background-position: center center!important;
+}
+
+.bg-dark-inset{
+    .wpb_wrapper {
+        background: #060606;
+    }
+}
+.bg-main-inset{
+    .wpb_wrapper {
+        background: $primary_color;
+    }
+}
+.wpb_single_image img { width: 100%; }
+
+.no-padding{
+	&.zo-row-full-width{
+		[class^='vc_col-'] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		@include breakpoint-max(992px){
+			.no-container{
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+	}		
+}
+
+@include breakpoint-min(1200px){
+	.no-padding{
+		.container{ padding-left: 0; padding-right: 0; }
+	}
+}
+
+
+/* Entry Blog */
+.entry-tags{
+	line-height: 40px;
+	i{
+		font-size: 14px;
+		padding-left: 20px;
+		padding-right: 10px;
+	}
+	a{
+		color: #86898b;
+		&:hover {
+			color: $primary_color;
+		}
+	}
+}
+/* Entry Blog */
+
+/* ==========================================================================
+   [End] 1. Reset HTML/CSS, Unitest, Body
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 2. Page Title
+========================================================================== */
+#page-title-text{
+    h1{
+        padding-bottom: 30px;
+        text-transform: uppercase;
+        margin: 0 0 10px;
+    }
+}
+.page-sub-title {
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+}
+
+#breadcrumb-text {
+	text-align: center;
+	.breadcrumbs {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		li {
+			display: inline-block;
+			font-family: Lato;
+			font-weight: 400;
+			color: #fde17f;
+			font-size: 14px;
+			&:after {
+				content: "\f054";
+				font-family: FontAwesome;
+				font-size: 12px;
+				padding: 0 7px;
+			}
+			&:last-child:after {
+				content: "";
+			}
+		}
+		a{
+			&:hover{
+				color: $primary_color !important;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   [End] 2. Page Title
+========================================================================== */
+
+/* ==========================================================================
+   [Start] 3. Primary
+========================================================================== */
+/*
+----> List Style 
+*/
+.list-style-check {
+    li {
+        color: #9c9c9c;
+        line-height: 31px;
+        position: relative;
+        padding-left: 36px;
+        &:before {
+            content: "\f00c";
+            font-family: FontAwesome;
+            color: #fff;
+            font-size: 18px;
+            position: absolute;
+            top: 1px;
+            left: 4px;
+            z-index: 1;
+        }
+        &:after {
+            content: "";
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-color: #db5896;
+            @extend .bg-effect-xs;
+            @include border-radius(2px);
+            border-width: 2px;
+            border-style: solid;
+            border-color: #ba2b6f;
+            position: absolute;
+            top: 4px;
+            left: 0;
+        }
+    }
+}
+.list-style-check.green {
+    li {
+        &:after {
+            background-color: #81b748;
+            border-color: #5a951b;
+        }
+    }
+}
+/*
+----> End List Style 
+*/
+
+/*
+----> VC Row Overlay Color 
+*/
+.entry-content .wpb_row {
+    &.background-image-fixed {
+        overflow: hidden;
+        position: inherit;
+        .zo-overlay-color {
+            height: 3000px;
+            left: 0;
+            position: relative;
+            margin-bottom: -3000px;
+            width: 100%;
+            @include transform(translateY(-20%));
+        }
+    }
+    .zo-overlay-color {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+/*
+----> End VC Row Overlay Color 
+*/
+
+/*
+----> VC Row Backgrund Color Custom 
+*/
+.row-custom-bg-color {
+    position: relative;
+    .zo-custom-bg-left, .zo-custom-bg-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+    }
+    .zo-custom-bg-right {
+        left: inherit;
+        right: 0;
+    }
+}
+/*
+----> End VC Row Backgrund Color Custom 
+*/
+.zo-row-arrow {
+    border-style: solid;
+    border-width: 20px;
+    bottom: 0;
+    height: 20px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 38px;
+}
+.row-arrow-top {
+    .zo-row-arrow {
+        bottom: inherit;
+        top: 0;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+.row-overlay-color,
+.zo_parallax {
+  position: relative;
+}
+.row-arrow-bottom {
+    .zo-row-arrow {
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+#zo-loadding {
+    background: #fff;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    .ball {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 50%;
+        @include transform(translate(0px, -50%));
+    }
+}
+
+/* ==========================================================================
+   [Start] 3. Primary
+========================================================================== */
+
+#take-action {
+    .bg-position-center{
+        background-position: center center!important;
+    }
+    .bg-position-top{
+        background-position: top center!important;
+    }
+}
+/* [Start] Contact page
+========================================================================== */
+
+.contact-info {
+    list-style: none inside;
+    li {
+        display: inline-block;
+        width: 40%;
+        &.address {
+            display: block;
+            margin-bottom: 15px;
+            width: 100%;
+        }
+        i{
+            padding-right: 10px;
+            color: $primary_color;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        li {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+}
+.contact-class{
+  h2{
+    color: $primary_color;
+    i{
+      padding-right: 5px;
+    }
+  }
+}
+
+.st-contact{
+  input[type="text"], input[type="email"], textarea{
+    background: #fff;
+    border: none;
+    font-weight: 400;
+    border-bottom: 1px solid #eee;
+    border-radius: 0;
+    padding-left: 3px;
+  }
+  textarea {
+    height: 45px;
+  }
+}
+#st-contact-submit{
+  input[type="submit"]{
+    background-color:#fff ;
+    border-color: $primary_color;
+    padding: 15px 30px;
+    color: #333!important;
+    &:visited, &:active, &:hover {
+      background: $primary_color;
+        color: #FFF;
+    }
+  }
+}
+
+/* [Start] Newsletter
+==============================================================*/
+.zo-newsletter {
+    height: 400px;
+    > .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%,-50%));
+    }
+    .widget_newsletterwidget {
+        .newsletter {
+            form {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                @include transform(translateY(-50%));
+                p {
+                    padding: 0;
+                    width: calc(75% - 15px);
+                    float: left;
+                    margin-right: 15px;
+                    @media screen and (max-width: 1024px) {
+                        + p {
+                            width: 25%;
+                            text-align: right;
+                            margin-right: 0;
+                        }
+                    }
+                    @media screen and (max-width: 768px){
+                        &:last-child {
+                            text-align: center!important;
+                        }
+                    }
+                    input {
+                        background-color: transparent;  
+                        border: 1px solid #d8d9da;
+                        height: 56px;
+                        border-radius: 0;
+                        margin: 0;
+                        width: 100%;
+                    }
+                    + p {
+                        width: 25% ;
+                        margin-right: 0;
+                        .newsletter-submit {
+                            width: 100%;
+                            border: none;
+                            border-radius: 0 ;
+                            height: 56px;
+                            background-color: #efbd07;
+                            color: #fff;
+                            font-size: 17px;
+                            &:hover {
+                                background-color: #fff;
+                                color: $primary_color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* [Start] Eror Page
+==============================================================*/
+.error404 {
+	#zo-header-wrap{
+		background: #0e0e0e;
+	}
+    #main {
+        padding: 0!important;
+        #primary {
+            background-color: $primary_color;
+            padding: 230px 0 90px;
+        }
+    }
+    #breadcrumb, #page-title { display: none };
+    .entry-error404 {
+        text-align: center;
+        color: #333;
+        .entry-header {
+            img {
+                margin-bottom: 40px;
+            }
+            h1 {
+                font-size: 50px;
+                color: #333;
+            }
+            h2 {
+                color: #333;
+                font-size: 30px;
+                line-height: 50px;
+            }
+        }
+        .entry-content {
+            padding: 20px 0;
+        }
+        .entry-footer {
+            .btn-home {
+                margin-right: 20px;
+            }
+        }
+    }
+}
+/* [End] Eror Page
+==============================================================*/
+
+
+
+/* =============================================================
+    [Start] 4. Widget
+============================================================== */
+/* =============================================================
+    [End] 4. Widget
+============================================================== */
+
+/* Contact Page */
+.page-contact{
+	.contact-office, .contact-social{
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+}
+.contact-office{
+	li{
+		i{
+			font-size: 14px;
+			margin-right: 10px;
+			min-width: 15px;
+		}
+		span{
+			float: left;
+			min-width: 90px;
+		}
+		i,span{
+			color: #000;
+		}
+	}
+}
+.contact-social{
+	li{
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		margin-right: 7px;
+		background: #cccccc;
+		text-align: center;
+		@include border-radius(50%);
+		@include transition( all 300ms ease 0s);
+		i{
+			font-size: 20px;
+			color: #fff;
+			line-height: 40px;
+		}
+		&:hover{
+			background: $primary_color;
+		}
+	}
+}
+/* Contact Page */
+
+
+/*
+ * Shake
+ */
+.zo-animation-shake {
+	-webkit-animation-name: zo-shake;
+	animation-name: zo-shake;
+	animation-duration: 0.5s;
+}

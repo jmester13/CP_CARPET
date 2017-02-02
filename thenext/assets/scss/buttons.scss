@@ -1,0 +1,294 @@
+/* ==========================================================================
+    Style Button
+========================================================================== */
+.btn, button, .button, input[type="submit"] {
+    line-height: 1;
+    display: inline-block;
+    outline: medium none;
+    text-decoration: none; text-transform: uppercase;
+    color: #333;
+    font-weight: 700;
+    @include transition(all 300ms linear 0ms);
+    @extend .bg-effect-xs;
+    font-weight: 400;
+    letter-spacing: 0;
+}
+.btn {
+    &.btn-green {
+        border-color: #5a8d23;
+        background-color: #81b748;
+    }
+    &.btn-purple {
+        border-color: #5c367c;
+        background-color: #765197;
+    }
+    &.btn-crimson {
+        border-color: #b63371;
+        background-color: #d24c8c;
+    }
+    /* Button White */
+    &.btn-white {
+        border-color: #fff;
+        color: #fff;
+        background-image: none;
+        &.btn-trans {
+            background-color: rgba(255,255,255,0.3);
+        }
+    }
+    &.btn-trans {
+        background-color: transparent;
+    }
+    /* Button Aize */
+    &.btn-lg {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+}
+.btn:hover, button:hover, .button:hover, input[type="submit"]:hover,.btn:focus, button:focus, .button:focus, input[type="submit"]:focus {
+    outline: medium none;
+    text-decoration: none;
+}
+/* Type Button */
+
+/* Button VC */
+.wpb_button_anone.right {
+    float: right
+}
+.vc_general.vc_btn3.btn-default.btn-white,
+.btn.btn-default.btn-white{
+    border: none;
+    background-color: #FFF;
+    &:hover{
+        color: #333 ! important;
+        border: 0 ! important;
+    }
+}
+.vc_general.vc_btn3.btn-default,
+.vc_btn.vc_btn_white{
+    background: #FFF;
+    border: 1px solid $primary_color;
+    @include border-radius(40px);
+    padding: 10px 35px;
+    .vc_btn3-icon {
+        display: inline-block;
+        position: static;
+        @include transform(none);
+    }
+    &:hover, &:visited {
+        color: #FFF!important;
+        background-color: $primary_color;
+    }
+}
+.vc_general.vc_btn3.btn.btn-primary{
+    background: $primary_color;
+} 
+.vc_custom_1433823566471{
+    .vc_general.vc_btn3.btn-default{
+        color: $primary_color ! important;
+    }
+}
+.vc_btn3-container {
+    margin-bottom: 0!important;
+}
+/* ==========================================================================
+    End Style Button
+========================================================================== */
+.btn-default {
+    background: none;
+    border: 1px solid #fff !important;
+    color: #fff !important;
+    padding: 15px 25px;
+    text-shadow: none;
+    border-radius: 2px !important;
+    &:hover{
+        background: $primary_color;
+        color: #fff;
+        border: 1px solid transparent !important;
+    }
+}
+.btn-primary{
+    background: $primary_color;
+    color: #fff ;
+    padding: 15px 30px ;
+    border-radius: 2px ;
+    border: 1px solid transparent ;
+    text-transform: uppercase;
+    &:hover {
+        background: transparent;
+        border: 1px solid #fff ;
+    }
+}
+.btn-info {
+    background-color: #fff;
+    border: 1px solid #86898b ;
+    color: #b6b8b9;
+    border-radius: 2px t;
+    padding: 6px 12px ;
+    &:hover{
+        background: $primary_color;
+        color: #fff;
+        border: 1px solid primary_color ;
+    }
+}
+.btn-success {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    color: #fff;
+}
+.btn-warning {
+    background-color: #f0ad4e;
+    border-color: #eea236;
+    color: #fff;
+}
+.btn-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    color: #fff;
+}
+.btn-inverse {
+    background: #000 none repeat scroll 0 0;
+    color: #fff !important;
+}
+.btn {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-image: none;
+    border-color: -moz-use-text-color -moz-use-text-color transparent;
+    border-image: none;
+    border-radius: 0;
+    border-style: none;
+    border-width: medium;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 11px 22px;
+    text-align: center;
+    text-shadow: none;
+    transition: all 400ms ease 0s;
+    vertical-align: middle;
+}
+[class*="uk-icon-"] {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+}
+.uk-icon-cloud-upload::before {
+    content: "";
+}
+.uk-icon-bullseye::before {
+    content: "";
+}
+.btn.btn-lg {
+    padding-left: 22px;
+    padding-right: 22px;
+}
+.btn.btn-readmore {
+    padding: 2px 12px;
+    border: 1px solid #86898b;
+    font-weight: 400 !important;
+    text-transform: inherit;
+    i {display: none;}
+    &:hover {
+        border: 1px solid transparent;
+        background-color: $primary_color;
+        color: #fff;
+    }
+}
+.btn.btn-archive {
+    background-color: #86898b;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 5px;
+    padding: 15px 35px;
+    &:hover {
+        background-color: $primary_color;
+    }
+    &.btn-from-our-blog {
+        background-color: #404144;
+    }
+    &.btn-archive-white {
+        background-color: #fff;
+        color: #4d4f50;
+        &:hover {
+            background-color: $primary_color;
+            color: #fff;
+        }
+    }
+}
+.btn.btn-view-more {
+    line-height: 25px;
+    border-radius: 4px;
+    border: 2px solid $primary_color;
+    text-transform: uppercase;
+    padding: 11px 36px;
+    background-color: $primary_color;
+    color: #fff;
+    font-weight: 700;
+    margin-right: 15px;
+    &:hover {
+        background-color: #fff;
+        color: $primary_color;
+        border-color: #fff;  
+    }
+}
+
+.btn.btn-view-more-2{ 
+    line-height: 25px;
+    border-radius: 4px;
+    border: 2px solid $primary_color;
+    text-transform: uppercase;
+    padding: 11px 36px;
+    background-color: $primary_color;
+    color: #fff;
+    font-weight: 700;
+    margin-right: 15px;
+    &:hover {
+        background-color: #fff;
+        color: $primary_color;
+        border-color: $primary_color;  
+    }
+}
+
+.btn.btn-purchase {
+    line-height: 25px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    padding: 11px 36px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 700;
+    &:hover {
+        background-color: #fff;
+        color: $primary_color;
+        border: 2px solid transparent;
+    }
+}
+.btn.btn-rev {
+    letter-spacing: 0;
+    padding: 17px 32px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 500;
+    &:hover {
+        border-color: $primary_color;
+    }
+}
+.btn.btn-facebook {
+    padding: 2px 12px;
+    border-radius: 2px;
+    background: #15529d;
+    color: #fff;
+    &:hover {
+        background: $primary_color;
+    }
+}

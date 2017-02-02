@@ -1,0 +1,50 @@
+/*------------------------------------------------------------------
+[All Style Sidebar Widget]
+
+-------------------------------------------------------------------*/
+.widget_newsletterwidget .newsletter form {
+    margin-top: 45px;
+}
+.secondary,
+.wpb_widgetised_column {
+    .wg-title {
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #4d4e50;
+        position: relative;
+        margin-bottom: 30px;
+        margin-top: 10px;
+        &:before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background-color: #86898b;
+            position: absolute;
+            top: 41px;
+        }
+    }
+}
+
+.wpb_widgetised_column {
+    .widget_newsletterwidget {
+        .wg-title {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+    }
+}
+.zo-page-sidebar-right {
+    .widget_newsletterwidget .wg-title {
+        padding: 0;
+        border: none;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #4d4e50;
+        position: relative;
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+}
